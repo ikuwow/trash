@@ -2,6 +2,10 @@
 
 TRASH_DIR="${HOME}/.trash/"
 
+if [ ! -d $TRASH_DIR ]; then
+    mkdir $TRASH_DIR
+fi
+
 mv $1 $TRASH_DIR
 
 exit 0
@@ -12,10 +16,10 @@ exit 0
 #     mkdir $TRASH_DIR
 # fi
 # echo test2
-# 
+#
 # if [ -e $1 ]; then
 #     mv $1 $TRASH_DIR
 # else
 #     echo "ERROR: No such file or directory (${1}"
 # fi
-# 
+#
