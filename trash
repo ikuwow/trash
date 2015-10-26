@@ -7,7 +7,8 @@ if [ ! -d $TRASH_DIR ]; then
 fi
 
 if [ -e $1 ]; then
-    mv $1 $TRASH_DIR
+    FILENAME=${1}_$(date +%Y%m%d%H%M%s)
+    mv $1 $TRASH_DIR/$FILENAME
 else
     echo "ERROR: No such file or directory (${1}"
 fi
